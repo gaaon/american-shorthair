@@ -31,6 +31,12 @@ jobs:
     needs: test
 
     steps:
+      - name: Continue if branch is not master
+        uses: actions/bin/filter@master
+        with: {
+          args: branch master
+        }
+
       - uses: actions/checkout@v1
 
       - name: Login to ECR
