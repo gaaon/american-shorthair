@@ -1,6 +1,5 @@
 import React, { FunctionComponent } from 'react';
 
-import Link from 'next/link';
 import Head from 'next/head';
 
 import Footer from './Footer';
@@ -9,8 +8,6 @@ import Header from './Header';
 interface Props {
   title: string
 }
-
-console.log(Link);
 
 const Layout: FunctionComponent<Props> = ({ children, title }) => (
   <div>
