@@ -17,7 +17,7 @@ interface Website {
 
 const Footer: FunctionComponent<Props> = () => {
   const websites: Array<Website> = [
-    {name: 'Github', url: 'http://daum.net'},
+    {name: 'Github', url: 'https://github.com/gaaon'},
     {name: 'Linkedin', url: 'http://daum.net'},
   ];
 
@@ -36,10 +36,19 @@ const Footer: FunctionComponent<Props> = () => {
               {
                 websites.map(website => (
                   <Col className={styles.website} key={website.name} xs={12}>
-                    {website.name}
+                    <a href={website.url} target={'__blank'}> {website.name} </a>
                   </Col>
                 ))
               }
+            </Row>
+          </Col>
+
+          <Col xs={4}>
+            <h2 className={'h5'}> Contact </h2>
+            <Row>
+              <Col xs={12}>
+                <a href={'mailto:xond4195@gmail.com'} target={'__blank'}> email </a>
+              </Col>
             </Row>
           </Col>
         </Row>

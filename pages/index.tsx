@@ -7,9 +7,11 @@ import Row from 'react-bootstrap/Row';
 
 import Layout from '../components/Layout';
 
+import styles from './index.scss';
+
 const Home: NextPage<{}> = () => (
   <Layout title={'Home'}>
-    <Container>
+    <Container className={styles.main}>
       <Row>
         <h1>
           hello world

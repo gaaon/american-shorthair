@@ -1,5 +1,7 @@
+@import '../common/theme';
+
 .footer {
-  background-color: black;
+  background-color: $main-dark-color;
   color: white;
   min-height: 150px;
 
