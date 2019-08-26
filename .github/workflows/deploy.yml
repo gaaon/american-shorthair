@@ -32,7 +32,7 @@ jobs:
 
     steps:
       - name: Continue if branch is not master
-        uses: actions/bin/filter@25b7b846d5027eac3315b50a8055ea675e2abd89
+        uses: actions/bin/filter@master
         with:
           args: branch master
 
@@ -42,7 +42,7 @@ jobs:
         if: github.ref != 'refs/head/master'
 
       - name: Login to ECR
-        uses: actions/aws/cli@efb074ae4510f2d12c7801e4461b65bf5e8317e6
+        uses: actions/aws/cli@master
         with:
           args: ecr get-login --no-include-email --region $AWS_DEFAULT_REGION | sh
         env:
@@ -51,12 +51,12 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
       - name: Build docker image
-        uses: actions/docker/cli@fe7ed3ce992160973df86480b83a2f8ed581cd50
+        uses: actions/docker/cli@master
         with:
           args: build -t american-shorthair .
 
       - name: Tag docker image
-        uses: actions/docker/tag@fe7ed3ce992160973df86480b83a2f8ed581cd50
+        uses: actions/docker/tag@master
         with:
           args: $IMAGE_NAME $CONTAINER_REGISTRY_PATH/$IMAGE_NAME
         env:
