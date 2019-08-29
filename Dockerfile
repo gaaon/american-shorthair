@@ -1,10 +1,9 @@
-# syntax = docker/dockerfile:experimental
-FROM node:12.9-alpine as builder
+FROM node:12.9.1-alpine as builder
 
 WORKDIR /deploy
 
 COPY package*.json ./
-RUN --mount=type=cache,target=/deploy/node_modules npm i
+RUN npm i
 
 COPY . .
 RUN npm run build
@@ -16,7 +15,7 @@ ENV NODE_ENV=production
 WORKDIR /deploy
 
 COPY package*.json ./
-RUN --mount=type=cache,target=/deploy/node_modules npm i
+RUN npm i
 
 COPY . .
 COPY --from=builder /deploy/.next ./.next
