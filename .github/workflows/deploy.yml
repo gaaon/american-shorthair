@@ -65,7 +65,7 @@ jobs:
 
 
       - name: Push image to ECR
-        uses: actions/docker/cli@fe7ed3ce992160973df86480b83a2f8ed581cd50
+        uses: actions/docker/cli@master
         with:
           args: push $CONTAINER_REGISTRY_PATH/$IMAGE_NAME
         env:
