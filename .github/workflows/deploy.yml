@@ -54,6 +54,8 @@ jobs:
         uses: actions/docker/cli@master
         with:
           args: build -t american-shorthair .
+        env:
+          DOCKER_BUILDKIT: 1
 
       - name: Tag docker image
         uses: actions/docker/tag@master
