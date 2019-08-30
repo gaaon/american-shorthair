@@ -9,6 +9,7 @@
     "test": "jest"
   },
   "dependencies": {
+    "@zeit/next-sass": "^1.0.1",
     "next": "9.0.5",
     "next-server": "9.0.5",
     "react": "16.9.0",
@@ -21,7 +22,6 @@
     "@types/jest": "^24.0.18",
     "@types/node": "^12.7.2",
     "@types/react": "^16.9.2",
-    "@zeit/next-sass": "^1.0.1",
     "babel-core": "^6.26.3",
     "babel-jest": "^24.9.0",
     "enzyme": "^3.10.0",
