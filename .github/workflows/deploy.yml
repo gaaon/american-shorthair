@@ -67,3 +67,12 @@ jobs:
         env:
           CONTAINER_REGISTRY_PATH: ${{ secrets.CONTAINER_REGISTRY_PATH }}
           IMAGE_NAME: american-shorthair
+
+      - name: Connect to ec2 and docker run for new image
+        uses: maddox/actions/ssh@master
+        with:
+          args: ./deploy-image.sh
+        env:
+          PRIVATE_KEY: ${{ secrets.EC2_PRIVATE_KEY }}
+          HOST: ${{ secrets.EC2_HOST }}
+          USER: ubuntu
