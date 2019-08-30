@@ -37,7 +37,10 @@ jobs:
       - uses: actions/checkout@v1
       - name: extract docker tag from github ref
         run: |
-          echo $(echo $GITHUB_REF | cut -d "/" -f 3)
+          echo $GITHUB_REF | cut -d "/" -f 3 | tee $HOME/version.txt
+      - name: echo version.txt
+        run: 'cat $HOME/version.txt'
+
       - name: Dump GitHub context
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}

@@ -11,31 +11,29 @@ interface Props {
   title: string
 }
 
-const Layout: FunctionComponent<Props> = ({ children, title }) => (
-  <div className={'d-flex flex-column ' + styles.layout}>
-    <Head>
-      <meta charSet="utf-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+const Layout: FunctionComponent<Props> = ({ children, title }) => {
 
-      <title>{title}</title>
+  return (
+    <div className={'d-flex flex-column ' + styles.layout}>
+      <Head>
+        <title>{title}</title>
+      </Head>
 
-      <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" />
-    </Head>
+      <Header/>
 
-    <Header />
+      <main className={styles.main}>
+        {children}
+      </main>
 
-    <main className={styles.main}>
-      {children}
-    </main>
+      <Footer/>
 
-    <Footer />
-
-    <style jsx={true} global={true}>{`
-    html, body, #__next {
-      height: 100%;
-    }
-    `}</style>
-  </div>
-);
+      <style jsx={true} global={true}>{`
+      html, body, #__next {
+        height: 100%;
+      }
+      `}</style>
+    </div>
+  )
+};
 
 export default Layout;

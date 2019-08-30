@@ -18,7 +18,7 @@ interface Website {
 const Footer: FunctionComponent<Props> = () => {
   const websites: Array<Website> = [
     {name: 'Github', url: 'https://github.com/gaaon'},
-    {name: 'Linkedin', url: 'http://daum.net'},
+    {name: 'Linkedin', url: 'https://www.linkedin.com/in/taewoo-kim-342020125'},
   ];
 
   return (
