@@ -35,45 +35,35 @@ jobs:
 
     steps:
       - uses: actions/checkout@v1
-      - name: extract docker tag from github ref
-        run: |
-          echo $GITHUB_REF | cut -d "/" -f 3 | tee $HOME/version.txt
-      - name: echo version.txt
-        run: 'cat $HOME/version.txt'
 
-      - name: Dump GitHub context
+      - name: Login to ECR
+        uses: actions/aws/cli@master
+        with:
+          args: ecr get-login --no-include-email --region $AWS_DEFAULT_REGION | sh
         env:
-          GITHUB_CONTEXT: ${{ toJson(github) }}
-        run: echo "$GITHUB_CONTEXT"
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_DEFAULT_REGION: ap-northeast-2
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
-#      - name: Login to ECR
-#        uses: actions/aws/cli@master
-#        with:
-#          args: ecr get-login --no-include-email --region $AWS_DEFAULT_REGION | sh
-#        env:
-#          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-#          AWS_DEFAULT_REGION: ap-northeast-2
-#          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-#
-#      - name: Build docker image
-#        uses: actions/docker/cli@master
-#        with:
-#          args: build -t american-shorthair .
-#        env:
-#          DOCKER_BUILDKIT: 1
-#
-#      - name: Tag docker image
-#        uses: actions/docker/tag@master
-#        with:
-#          args: $IMAGE_NAME $CONTAINER_REGISTRY_PATH/$IMAGE_NAME:$
-#        env:
-#          CONTAINER_REGISTRY_PATH: ${{ secrets.CONTAINER_REGISTRY_PATH }}
-#          IMAGE_NAME: american-shorthair
-#
-#      - name: Push image to ECR
-#        uses: actions/docker/cli@master
-#        with:
-#          args: push $CONTAINER_REGISTRY_PATH/$IMAGE_NAME
-#        env:
-#          CONTAINER_REGISTRY_PATH: ${{ secrets.CONTAINER_REGISTRY_PATH }}
-#          IMAGE_NAME: american-shorthair
+      - name: Build docker image
+        uses: actions/docker/cli@master
+        with:
+          args: build -t american-shorthair .
+        env:
+          DOCKER_BUILDKIT: 1
+
+      - name: Tag docker image
+        uses: actions/docker/tag@master
+        with:
+          args: $IMAGE_NAME $CONTAINER_REGISTRY_PATH/$IMAGE_NAME --no-latest --no-sha
+        env:
+          CONTAINER_REGISTRY_PATH: ${{ secrets.CONTAINER_REGISTRY_PATH }}
+          IMAGE_NAME: american-shorthair
+
+      - name: Push image to ECR
+        uses: actions/docker/cli@master
+        with:
+          args: push $CONTAINER_REGISTRY_PATH/$IMAGE_NAME
+        env:
+          CONTAINER_REGISTRY_PATH: ${{ secrets.CONTAINER_REGISTRY_PATH }}
+          IMAGE_NAME: american-shorthair
