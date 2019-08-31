@@ -16,6 +16,7 @@ class MyDocument extends Document {
           <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
 
           <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css"/>
+          <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/nanumgothic.css"/>
 
           <script
             async

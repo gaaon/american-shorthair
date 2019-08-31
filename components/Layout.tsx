@@ -31,6 +31,9 @@ const Layout: FunctionComponent<Props> = ({ children, title }) => {
       html, body, #__next {
         height: 100%;
       }
+      * {
+        font-family: 'Nanum Gothic', apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+      }
       `}</style>
     </div>
   )

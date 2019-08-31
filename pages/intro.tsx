@@ -1,24 +1,22 @@
 import React from 'react';
 
-import { NextPage } from "next";
+import {NextPage} from 'next';
 
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 
 import Layout from '../components/Layout';
 
-import styles from './index.scss';
-
-const Home: NextPage<{}> = () => (
+const Intro: NextPage<{}> = () => (
   <Layout title={'Home'}>
-    <Container className={styles.main}>
+    <Container>
       <Row>
         <h1>
-          홈
+          내 소개
         </h1>
       </Row>
     </Container>
   </Layout>
 );
 
-export default Home
+export default Intro;
