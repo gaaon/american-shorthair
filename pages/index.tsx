@@ -13,9 +13,15 @@ const Home: NextPage<{}> = () => (
   <Layout title={'Home'}>
     <Container className={styles.main}>
       <Row>
-        <h1>
-          홈
-        </h1>
+        <div>
+          <h1 className={'mt-5'}>
+            여기는
+          </h1>
+
+          <p>
+            여기는 제 소개와 글도 쓰고 테스트를 하는 공간이에요.
+          </p>
+        </div>
       </Row>
     </Container>
   </Layout>

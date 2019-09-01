@@ -6,32 +6,44 @@ import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 
+import styles from './Header.scss';
+import {LinkItem} from '../types';
+
 interface Props {
 
 }
 
 const NavNextLink = ({link, label}: {link: string, label: string}) => (
-  <Link href={link}>
-    <Nav.Link as={'a'} href={link}>{label}</Nav.Link>
+  <Link href={link} passHref={true}>
+    <Nav.Link as={'a'}>{label}</Nav.Link>
   </Link>
 );
 
-const Header: FunctionComponent<Props> = () => (
-  <header>
-      <Navbar bg={'dark'} variant={'dark'}>
-        <Container>
-          <Navbar.Brand className={'mr-auto'}>
-            Taawoo
-          </Navbar.Brand>
+const Header: FunctionComponent<Props> = () => {
+  const linkItems: Array<LinkItem> = [
+    {link: '/intro', label: '소개'},
+    {link: '/laboratory', label: '실험실'},
+  ];
 
-          <Nav>
-            <NavNextLink link={'/intro'} label={'소개'} />
-            <NavNextLink link={'/blog'} label={'블로그'} />
-            <NavNextLink link={'/service'} label={'서비스'} />
-          </Nav>
-        </Container>
-      </Navbar>
-  </header>
-);
+  return (
+    <header>
+        <Navbar bg={'dark'} variant={'dark'} className={styles.customNavbar}>
+          <Container>
+            <Link href={'/'} passHref={true}>
+              <Navbar.Brand className={'mr-auto'}>
+                Taawoo
+              </Navbar.Brand>
+            </Link>
+
+            <Nav>
+              {linkItems.map((item, idx) => (
+                <NavNextLink link={item.link} label={item.label} key={idx} />
+              ))}
+            </Nav>
+          </Container>
+        </Navbar>
+    </header>
+  );
+};
 
 export default Header;

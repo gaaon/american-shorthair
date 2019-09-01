@@ -4,8 +4,7 @@ import Head from 'next/head';
 
 import Footer from './Footer';
 import Header from './Header';
-
-import styles from './Layout.scss';
+import Base from './Base';
 
 interface Props {
   title: string
@@ -14,28 +13,19 @@ interface Props {
 const Layout: FunctionComponent<Props> = ({ children, title }) => {
 
   return (
-    <div className={'d-flex flex-column ' + styles.layout}>
+    <Base>
       <Head>
         <title>{title}</title>
       </Head>
 
       <Header/>
 
-      <main className={styles.main}>
+      <main className={'flex-grow-1'}>
         {children}
       </main>
 
       <Footer/>
-
-      <style jsx={true} global={true}>{`
-      html, body, #__next {
-        height: 100%;
-      }
-      * {
-        font-family: 'Nanum Gothic', apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
-      }
-      `}</style>
-    </div>
+    </Base>
   )
 };
 
