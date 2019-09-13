@@ -1,0 +1,13 @@
+.menuList {
+  list-style: none;
+  padding-inline-start: initial;
+}
+
+.menuItem {
+  color: black;
+
+  &:hover {
+    text-decoration: none;
+    color: white;
+  }
+}

@@ -16,12 +16,11 @@ class MyDocument extends Document {
           <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
 
           <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css"/>
+          <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto&display=swap" />
           <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/nanumgothic.css"/>
 
-          <script
-            async
-            src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
-          />
+          <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}/>
+          <script src={`https://kit.fontawesome.com/96227faa19.js`} />
           <script
             dangerouslySetInnerHTML={{
               __html: `
@@ -31,6 +30,12 @@ class MyDocument extends Document {
             gtag('config', '${GA_TRACKING_ID}');`
             }}
           />
+
+          <script dangerouslySetInnerHTML={{
+            __html: `
+            CSS.paintWorklet.addModule('/static/js/day-night-switch-paint.js');
+            `
+          }} />
         </Head>
         <body>
           <Main />

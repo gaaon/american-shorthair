@@ -5,14 +5,10 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 import styles from './Footer.scss';
+import { Website } from '../types';
 
 interface Props {
 
-}
-
-interface Website {
-  name: string
-  url: string
 }
 
 const Footer: FunctionComponent<Props> = () => {
