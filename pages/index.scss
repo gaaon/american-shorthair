@@ -3,20 +3,20 @@
 }
 
 .left {
-  background-color: #ff7043;
+  background-color: #ff8a65; // 255, 112, 67
   transition: transform 1s ease-in-out;
 
   &.moving {
-    transform: translateX(-1000px);
+    transform: translateX(-1500px);
   }
 }
 
 .right {
-  background-color: #ffca28;
+  background-color: #ffd54f;
   transition: transform 1s ease-in-out;
 
   &.moving {
-    transform: translateX(1000px);
+    transform: translateX(1500px);
   }
 }
 

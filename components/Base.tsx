@@ -1,7 +1,7 @@
 import React, {FunctionComponent} from 'react';
 
 const Base: FunctionComponent<{}> = ({children}) => (
-  <div className={'d-flex flex-column min-h-100 h-100'}>
+  <div className={'d-flex flex-column min-h-100 h-100'} style={{overflowX: 'hidden'}}>
     <style jsx={true} global={true}>{`
       html, body, #__next {
         height: 100%;
