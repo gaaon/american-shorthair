@@ -9,5 +9,15 @@
   &:hover {
     text-decoration: none;
     color: white;
+
+    :global(.fa-smile-wink) {
+      font-weight: 900;
+    }
+
+    :global(.fa-lightbulb) {
+      font-weight: 900;
+    }
   }
 }
+
+

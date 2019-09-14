@@ -13,6 +13,7 @@ const BackgroundMain: React.FC<Props> = ({className}) => (
       <Row className={'h-100 flex-column justify-content-center'}>
         <Col className={'flex-grow-0'}>
           <h2 className={'display-2 text-center'}>좋아요 갑시다!</h2>
+          <div className={'text-center'}> <del> 다양한 멘트 준비중..! </del> </div>
         </Col>
       </Row>
     </Container>

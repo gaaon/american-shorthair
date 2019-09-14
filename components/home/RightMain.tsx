@@ -21,8 +21,6 @@ const RightMain: React.FC<Props> = ({className, onClickLink, onClickTriggerAnim,
     {link: '/laboratory', label: '실험실', icon: 'fas fa-flask'},
   ];
 
-  console.log(onClickTriggerAnim);
-  console.log(isAnimActive);
   return (
     <Col className={className}>
       <Row className={'h-100 flex-column justify-content-center'}>
@@ -36,9 +34,11 @@ const RightMain: React.FC<Props> = ({className, onClickLink, onClickTriggerAnim,
                       <a href={linkItem.link} onClick={onClickLink} className={styles.menuItem}>
                         <p className={'h3'}>
                           <span className={'d-inline-block text-center'} style={{minWidth: 40}}>
-                            <i className={`${linkItem.icon || ''} fa-md`} />
+                            <i className={`${linkItem.icon || ''} fa-md`} aria-hidden="true" />
                           </span>
-                          {linkItem.label}
+                          <span style={{letterSpacing: '.2em'}}>
+                            {linkItem.label}
+                          </span>
                         </p>
                       </a>
                     </li>
@@ -56,12 +56,7 @@ const RightMain: React.FC<Props> = ({className, onClickLink, onClickTriggerAnim,
                    type={'checkbox'}
                    id={'anim-active'}
                    checked={isAnimActive}
-                   onChange={(_) => console.log('ho')}
-                   // onChange={(e) => {
-                   //   console.log('hello');
-                   //   onClickTriggerAnim(e);
-                   // }}
-            />
+                   onChange={onClickTriggerAnim} />
           </div>
         </Col>
       </Row>

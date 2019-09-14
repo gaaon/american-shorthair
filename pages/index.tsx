@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { NextPage } from 'next';
+import { NextPage, NextPageContext } from 'next';
 import Head from 'next/head';
 import Router from 'next/router';
 
@@ -10,6 +10,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 
 import Cookies from 'js-cookie';
+import cookie from 'cookie';
 
 import Base from '../components/Base';
 import LeftMain from '../components/home/LeftMain';
@@ -18,13 +19,14 @@ import BackgroundMain from '../components/home/BackgroundMain';
 
 import styles from './index.scss';
 
-const Home: NextPage<{}> = () => {
+interface Props {
+  isHomeAnimActive: string;
+}
+
+const Home: NextPage<Props> = ({ isHomeAnimActive }) => {
   const store = useLocalStore(() => ({
     isMoving: false,
-    isAnimActive: (() => {
-      const isHomeAnimActive = Cookies.get('isHomeAnimActive');
-      return isHomeAnimActive === undefined || isHomeAnimActive === 'true';
-    })(),
+    isAnimActive: isHomeAnimActive === 'true',
     movingState: '',
     toggleAnimActive() {
       store.isAnimActive = !store.isAnimActive;
@@ -53,11 +55,6 @@ const Home: NextPage<{}> = () => {
     },
   }));
 
-  function a() {
-    store.isAnimActive = !store.isAnimActive;
-    Cookies.set('isHomeAnimActive', (store.isAnimActive) + '');
-  }
-
   return useObserver(() => (
     <Base>
       <Head>
@@ -70,13 +67,29 @@ const Home: NextPage<{}> = () => {
           <RightMain className={`${styles.right} ${store.movingState}`}
                      isAnimActive={store.isAnimActive}
                      onClickLink={store.clickLink}
-                     onClickTriggerAnim={a} />
+                     onClickTriggerAnim={store.toggleAnimActive} />
         </Row>
       </Container>
 
       <BackgroundMain className={styles.backgroundMain} />
     </Base>
   ));
+};
+
+Home.getInitialProps = async (ctx: NextPageContext) => {
+  let isHomeAnimActive: string | undefined;
+
+  if (ctx.req) {
+    const headers = ctx.req.headers;
+    const ctxCookie = cookie.parse(headers.cookie || '');
+    isHomeAnimActive = ctxCookie['isHomeAnimActive'];
+  } else {
+    isHomeAnimActive = Cookies.get('isHomeAnimActive');
+  }
+
+  return {
+    isHomeAnimActive: (isHomeAnimActive === undefined || isHomeAnimActive) + '',
+  };
 };
 
 export default Home;
