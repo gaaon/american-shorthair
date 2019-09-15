@@ -3,27 +3,34 @@ import App, { AppContext } from 'next/app';
 import Router from 'next/router';
 
 import * as gtag from '../lib/gtag';
-// import { createRootStore } from './store';
+import {createData, initializeData, InjectStoreContext, RootStore} from '../store';
 
 Router.events.on('routeChangeComplete', url => gtag.pageview(url));
 
-class MyApp extends App {
+interface Props {
+  initialStoreData: RootStore,
+}
+
+class MyApp extends App<Props> {
   static async getInitialProps(appContext: AppContext) {
-    // calls page's `getInitialProps` and fills `appProps.pageProps`
     const appProps = await App.getInitialProps(appContext);
 
-    return { ...appProps }
-  }
+    const initialStoreData = initializeData(createData(appContext));
 
-  static getDerivedStateFromProps(props: any, state: any) {
-    console.log(props, state);
-    return state;
+    return {
+      ...appProps,
+      initialStoreData,
+    };
   }
-
 
   render() {
-    const { Component, pageProps } = this.props;
-    return <Component {...pageProps } />;
+    const { Component, pageProps, initialStoreData } = this.props;
+
+    return (
+      <InjectStoreContext initialData={initialStoreData}>
+        <Component {...pageProps } />
+      </InjectStoreContext>
+    );
   }
 }
 

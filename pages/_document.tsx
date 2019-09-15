@@ -3,9 +3,7 @@ import Document, { Html, Head, Main, NextScript, DocumentContext } from 'next/do
 import { GA_TRACKING_ID } from '../lib/gtag';
 import {useStaticRendering} from 'mobx-react';
 
-if (!process.browser) {
-  useStaticRendering(true);
-}
+useStaticRendering(!process.browser);
 
 class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {

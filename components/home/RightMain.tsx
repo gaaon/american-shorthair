@@ -3,64 +3,26 @@ import React from 'react';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 
-import { LinkItem } from '../../types';
-
-import styles from './RightMain.scss';
+import { useStore } from '../../store';
+import Content from './content/Content';
+import Footer from './content/Footer';
 
 interface Props {
   className?: string;
   onClickLink: (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => void;
   onClickTriggerAnim: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  isAnimActive: boolean;
+  isAnimActive: Boolean;
 }
 
 const RightMain: React.FC<Props> = ({className, onClickLink, onClickTriggerAnim, isAnimActive}) => {
-  const linkItems: Array<LinkItem> = [
-    {link: '/intro', label: '소개', icon: 'far fa-smile-wink'},
-    {link: '/service', label: '서비스', icon: 'far fa-lightbulb'},
-    {link: '/laboratory', label: '실험실', icon: 'fas fa-flask'},
-    // {link: '/blog', label: '블로그', icon: 'fas fa-blog'},
-  ];
+  const rootStore = useStore();
 
   return (
     <Col className={className}>
       <Row className={'h-100 flex-column justify-content-center'}>
         <Col className={'d-none d-sm-block flex-grow-0'} style={{minHeight: 24}} />
-        <Col>
-          <Row className={'h-100 flex-column justify-content-sm-center justify-content-top'}>
-            <Col className={'flex-grow-0'}>
-              <ul className={styles.menuList}>
-                {
-                  linkItems.map((linkItem, idx) => (
-                    <li key={idx} className={'mt-4'}>
-                      <a href={linkItem.link} onClick={onClickLink} className={styles.menuItem}>
-                        <p className={'h3'}>
-                          <span className={'d-inline-block text-center'} style={{minWidth: 40}}>
-                            <i className={`${linkItem.icon || ''} fa-md`} aria-hidden="true" />
-                          </span>
-                          <span style={{letterSpacing: '.2em'}}>
-                            {linkItem.label}
-                          </span>
-                        </p>
-                      </a>
-                    </li>
-                  ))
-                }
-              </ul>
-            </Col>
-          </Row>
-        </Col>
-
-        <Col className={'flex-grow-0'}>
-          <div className={'form-check form-check-inline'}>
-            <label className={'form-check-label'} htmlFor={'anim-active'}> 애니메이션 끄기 </label>
-            <input className={'form-check-input ml-2'}
-                   type={'checkbox'}
-                   id={'anim-active'}
-                   checked={!isAnimActive}
-                   onChange={onClickTriggerAnim} />
-          </div>
-        </Col>
+        <Content internalLinks={rootStore.link.internalLinks} onClickLink={onClickLink} />
+        <Footer isAnimActive={isAnimActive} onClickTriggerAnim={onClickTriggerAnim} />
       </Row>
     </Col>
   )
