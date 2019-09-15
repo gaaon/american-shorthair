@@ -23,7 +23,6 @@ class MyDocument extends Document {
           <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/nanumgothic.css"/>
 
           <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}/>
-          <script src={`https://kit.fontawesome.com/96227faa19.js`} />
           <script
             dangerouslySetInnerHTML={{
               __html: `
