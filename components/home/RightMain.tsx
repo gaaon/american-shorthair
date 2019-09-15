@@ -19,14 +19,15 @@ const RightMain: React.FC<Props> = ({className, onClickLink, onClickTriggerAnim,
     {link: '/intro', label: '소개', icon: 'far fa-smile-wink'},
     {link: '/service', label: '서비스', icon: 'far fa-lightbulb'},
     {link: '/laboratory', label: '실험실', icon: 'fas fa-flask'},
-    {link: '/blog', label: '블로그', icon: 'fas fa-blog'},
+    // {link: '/blog', label: '블로그', icon: 'fas fa-blog'},
   ];
 
   return (
     <Col className={className}>
       <Row className={'h-100 flex-column justify-content-center'}>
-        <Col style={{paddingTop: 24}}>
-          <Row className={'h-100 flex-column justify-content-center'}>
+        <Col className={'d-none d-sm-block flex-grow-0'} style={{minHeight: 24}} />
+        <Col>
+          <Row className={'h-100 flex-column justify-content-sm-center justify-content-top'}>
             <Col className={'flex-grow-0'}>
               <ul className={styles.menuList}>
                 {
@@ -52,11 +53,11 @@ const RightMain: React.FC<Props> = ({className, onClickLink, onClickTriggerAnim,
 
         <Col className={'flex-grow-0'}>
           <div className={'form-check form-check-inline'}>
-            <label className={'form-check-label'} htmlFor={'anim-active'}> 애니메이션 </label>
+            <label className={'form-check-label'} htmlFor={'anim-active'}> 애니메이션 끄기 </label>
             <input className={'form-check-input ml-2'}
                    type={'checkbox'}
                    id={'anim-active'}
-                   checked={isAnimActive}
+                   checked={!isAnimActive}
                    onChange={onClickTriggerAnim} />
           </div>
         </Col>

@@ -23,7 +23,10 @@ interface Props {
   isHomeAnimActive: string;
 }
 
-const Home: NextPage<Props> = ({ isHomeAnimActive }) => {
+const Home: NextPage<Props> = (props) => {
+  const { isHomeAnimActive } = props;
+  console.log(props);
+
   const store = useLocalStore(() => ({
     isMoving: false,
     isAnimActive: isHomeAnimActive === 'true',
@@ -62,7 +65,7 @@ const Home: NextPage<Props> = ({ isHomeAnimActive }) => {
       </Head>
 
       <Container className={styles.main}>
-        <Row className={'h-100'}>
+        <Row className={'h-100 flex-column flex-sm-row'}>
           <LeftMain className={`${styles.left} ${store.movingState}`} />
           <RightMain className={`${styles.right} ${store.movingState}`}
                      isAnimActive={store.isAnimActive}
@@ -77,6 +80,7 @@ const Home: NextPage<Props> = ({ isHomeAnimActive }) => {
 };
 
 Home.getInitialProps = async (ctx: NextPageContext) => {
+  console.log(ctx);
   let isHomeAnimActive: string | undefined;
 
   if (ctx.req) {

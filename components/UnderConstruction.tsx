@@ -3,13 +3,19 @@ import Link from 'next/link';
 
 import styles from './UnderConstruction.scss';
 
-const UnderConstruction = () => (
-  <div className={'d-inline-block'}>
-    <h1 className={'display-3 text-center'}> 공사중 </h1>
-    <div className={'text-center mb-3'}>
-      <Link href={'/'}> 홈으로 </Link>
+interface Props {
+  content: string;
+}
+
+const UnderConstruction: React.FC<Props> = ({content}) => (
+  <div className={'d-flex flex-column align-items-center'}>
+    <h2> {content} </h2>
+    <div className={'mb-3'}>
+      <Link href={'/'}>
+        <a> 홈으로 </a>
+      </Link>
     </div>
-    <img src={'/static/img/under_construction.png'} alt={'공사중'} className={styles.image} />
+    <img src={'/static/img/under_construction.png'} alt={content} className={styles.image} />
   </div>
 );
 

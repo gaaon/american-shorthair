@@ -17,7 +17,7 @@ const Intro: NextPage<{}> = () => (
 
     <Container className={'h-100'}>
       <Row className={'h-100 justify-content-center align-items-center'}>
-        <UnderConstruction/>
+        <UnderConstruction content={'소개 페이지 공사중'}/>
       </Row>
     </Container>
   </Base>
