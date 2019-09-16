@@ -54,7 +54,7 @@ const Home: NextPage = () => {
       </Head>
 
       <Container className={styles.main}>
-        <Row className={'h-100 flex-column flex-sm-row'}>
+        <Row className={'h-100 flex-column flex-md-row'}>
           <LeftMain className={`${styles.left} ${store.movingState}`} />
           <RightMain className={`${styles.right} ${store.movingState}`}
                      isAnimActive={store.setting.isHomeAnimActive}
