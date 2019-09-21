@@ -1,10 +1,14 @@
+@import '../common/theme';
+
 .main {
   height: 100%;
 }
 
 .left {
-  background-color: #ff8a65; // 255, 112, 67
+  border: 3px solid $color-orange;
   transition: transform 1s ease-in-out;
+
+  background-image: url(/static/img/door_pattern.jpg);
 
   &.moving {
     transform: translateX(-1500px);
@@ -12,8 +16,10 @@
 }
 
 .right {
-  background-color: #ffd54f;
+  border: 3px solid $color-banana;
   transition: transform 1s ease-in-out;
+
+  background-image: url(/static/img/door_pattern.jpg);
 
   &.moving {
     transform: translateX(1500px);
