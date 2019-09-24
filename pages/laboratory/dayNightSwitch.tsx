@@ -6,7 +6,7 @@ import Row from 'react-bootstrap/Row';
 
 import LabLayout from '../../components/LabLayout';
 
-import styles from './dayNightSwitch.scss';
+import styles from './dayNightSwitch.module.scss';
 
 const DayNightSwitch = () => (
   <LabLayout>

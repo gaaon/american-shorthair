@@ -16,7 +16,7 @@ import RightMain from '../components/home/RightMain';
 
 import { RootStore, useStore } from '../store';
 
-import styles from './index.scss';
+import styles from './index.module.scss';
 
 const Home: NextPage = () => {
   const rootStore = useStore();

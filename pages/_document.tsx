@@ -25,6 +25,20 @@ class MyDocument extends Document {
           <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Roboto&display=swap' />
           <link rel='stylesheet' href='//fonts.googleapis.com/earlyaccess/nanumgothic.css'/>
 
+          <style>{`
+          html, body, #__next {
+            height: 100%;
+          }
+
+          * {
+            font-family: Roboto, Nanum Gothic, apple-system,BlinkMacSystemFont,Segoe UI;
+          }
+
+          .min-h-100 {
+            min-height: 100%;
+          }
+          `}
+          </style>
           <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}/>
           <script
             dangerouslySetInnerHTML={{

@@ -1,0 +1,256 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="d-flex flex-column min-h-100 h-100"
+  style={
+    Object {
+      "overflowX": "hidden",
+    }
+  }
+>
+  <div
+    className="main container"
+  >
+    <div
+      className="h-100 flex-column flex-md-row row"
+    >
+      <div
+        className="left  col"
+      >
+        <div
+          className="h-100 flex-column justify-content-end justify-content-sm-center row"
+        >
+          <div
+            className="text-right flex-grow-0 col"
+          >
+            <div
+              className="justify-content-end row"
+            >
+              <div
+                className="col"
+              >
+                <img
+                  alt="my photo"
+                  className="avatar"
+                  src="/static/img/my_photo.jpeg"
+                />
+              </div>
+            </div>
+            <h1
+              className="display-4 d-none d-lg-block text-weight-bold"
+            >
+               
+              <strong>
+                 
+                <small
+                  className="text-orange"
+                >
+                  모든 코드에 대한
+                </small>
+                 
+                <br />
+                taawoo의 페이지
+                 
+              </strong>
+               
+            </h1>
+            <p
+              className="h2 d-block d-lg-none"
+            >
+               
+              <small
+                className="text-orange"
+              >
+                모든 코드에 대한
+              </small>
+               
+              <br />
+              taawoo의 페이지
+               
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        className="right  col"
+      >
+        <div
+          className="h-100 flex-column justify-content-center row"
+        >
+          <div
+            className="d-none d-sm-block flex-grow-0 col"
+            style={
+              Object {
+                "minHeight": 24,
+              }
+            }
+          />
+          <div
+            className="col"
+          >
+            <div
+              className="h-100 flex-column justify-content-sm-center justify-content-top row"
+            >
+              <div
+                className="flex-grow-0 col"
+              >
+                <ul
+                  className="menuList"
+                >
+                  <li
+                    className="mt-4"
+                  >
+                    <p
+                      className="h3"
+                    >
+                      <a
+                        className="menuItem"
+                        href="/intro"
+                        onClick={[Function]}
+                      >
+                        <span
+                          className="d-inline-block text-center"
+                          style={
+                            Object {
+                              "minWidth": 50,
+                            }
+                          }
+                        />
+                        <span
+                          style={
+                            Object {
+                              "letterSpacing": ".1em",
+                            }
+                          }
+                        >
+                          소개
+                        </span>
+                      </a>
+                    </p>
+                  </li>
+                  <li
+                    className="mt-4"
+                  >
+                    <p
+                      className="h3"
+                    >
+                      <a
+                        className="menuItem"
+                        href="/service"
+                        onClick={[Function]}
+                      >
+                        <span
+                          className="d-inline-block text-center"
+                          style={
+                            Object {
+                              "minWidth": 50,
+                            }
+                          }
+                        />
+                        <span
+                          style={
+                            Object {
+                              "letterSpacing": ".1em",
+                            }
+                          }
+                        >
+                          서비스
+                        </span>
+                      </a>
+                    </p>
+                  </li>
+                  <li
+                    className="mt-4"
+                  >
+                    <p
+                      className="h3"
+                    >
+                      <a
+                        className="menuItem"
+                        href="/laboratory"
+                        onClick={[Function]}
+                      >
+                        <span
+                          className="d-inline-block text-center"
+                          style={
+                            Object {
+                              "minWidth": 50,
+                            }
+                          }
+                        />
+                        <span
+                          style={
+                            Object {
+                              "letterSpacing": ".1em",
+                            }
+                          }
+                        >
+                          실험실
+                        </span>
+                      </a>
+                    </p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div
+            className="flex-grow-0 col"
+          >
+            <div
+              className="form-check form-check-inline"
+            >
+              <label
+                className="form-check-label"
+                htmlFor="anim-active"
+              >
+                 애니메이션 끄기 
+              </label>
+              <input
+                checked={false}
+                className="form-check-input ml-2"
+                id="anim-active"
+                onChange={[Function]}
+                type="checkbox"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="backgroundMain"
+  >
+    <div
+      className="h-100 container"
+    >
+      <div
+        className="h-100 flex-column justify-content-center row"
+      >
+        <div
+          className="flex-grow-0 col"
+        >
+          <h2
+            className="display-4 text-center"
+          >
+            좋아요
+            <br />
+            갑시다!
+          </h2>
+          <div
+            className="text-center"
+          >
+             
+            <del>
+               다양한 멘트 준비중..! 
+            </del>
+             
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -2,7 +2,7 @@ import { NextApiRequest, NextApiResponse } from 'next-server/dist/lib/utils';
 
 import { constants } from 'http2';
 
-import statusApi from '../status';
+import statusApi from '../../pages/api/status';
 
 const {
   HTTP_STATUS_OK,

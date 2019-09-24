@@ -6,7 +6,7 @@ import Row from 'react-bootstrap/Row';
 
 import { Website } from '../types';
 
-import styles from './Footer.scss';
+import styles from './Footer.module.scss';
 
 interface Props {
 

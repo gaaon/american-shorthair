@@ -8,7 +8,7 @@ import Navbar from 'react-bootstrap/Navbar';
 
 import { LinkItem } from '../types';
 
-import styles from './Header.scss';
+import styles from './Header.module.scss';
 
 interface Props {
 

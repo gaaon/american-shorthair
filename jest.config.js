@@ -1,6 +1,6 @@
 const TEST_REGEX = '(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|js?|tsx?|ts?)$';
 
-export default {
+module.exports = {
   setupFiles: ['<rootDir>/jest.setup.ts'],
   testRegex: TEST_REGEX,
   transform: {
@@ -8,5 +8,8 @@ export default {
   },
   testPathIgnorePatterns: ['<rootDir>/.next/', '<rootDir>/node_modules/'],
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
-  collectCoverage: false
+  collectCoverage: false,
+  moduleNameMapper: {
+    '^.+\\.module\\.(css|scss)$': 'identity-obj-proxy',
+  }
 };

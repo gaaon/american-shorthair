@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { LinkItem } from '../../../types';
 
-import styles from '../RightMain.scss';
+import styles from '../RightMain.module.scss';
 
 interface ContentProps {
   internalLinks: Array<LinkItem>;
@@ -16,23 +16,23 @@ interface ContentProps {
 
 const Content: React.FC<ContentProps> = ({internalLinks, onClickLink}) => {
   const [showIcon, setShowIcon] = useState(false);
-  const [iconColor, setIconColor] = useState('inherit');
+  const [iconColor] = useState('inherit');
 
   useEffect(() => {
     setTimeout(() => setShowIcon(true), 0);
   }, []);
 
-  useEffect(() => {
-    const colorBanana = '#ffc107';
-
-    const timer = setTimeout(
-      () => setIconColor(iconColor === 'inherit' ? colorBanana : 'inherit'),
-      2000);
-
-    return () => {
-      clearTimeout(timer);
-    };
-  }, [iconColor]);
+  // useEffect(() => {
+  //   const colorBanana = '#ffc107';
+  //
+  //   const timer = setTimeout(
+  //     () => setIconColor(iconColor === 'inherit' ? colorBanana : 'inherit'),
+  //     2000);
+  //
+  //   return () => {
+  //     clearTimeout(timer);
+  //   };
+  // }, [iconColor]);
 
   return (
     <Col>

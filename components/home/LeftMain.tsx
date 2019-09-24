@@ -3,7 +3,7 @@ import React from 'react';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 
-import styles from './LeftMain.scss';
+import styles from './LeftMain.module.scss';
 
 const MainTitle = () => (
   <React.Fragment>
@@ -22,7 +22,7 @@ const LeftMain: React.FC<{className?: string}> = ({className}) => (
           </Col>
         </Row>
 
-        <h1 className={'display-4 d-none d-lg-block'}> <MainTitle/> </h1>
+        <h1 className={'display-4 d-none d-lg-block text-weight-bold'}> <strong> <MainTitle/> </strong> </h1>
         <p className={'h2 d-block d-lg-none'}> <MainTitle/> </p>
       </Col>
     </Row>
