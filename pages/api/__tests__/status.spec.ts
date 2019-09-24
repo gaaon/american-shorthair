@@ -1,6 +1,8 @@
+import { NextApiRequest, NextApiResponse } from 'next-server/dist/lib/utils';
+
+import { constants } from 'http2';
+
 import statusApi from '../status';
-import {NextApiRequest, NextApiResponse} from 'next-server/dist/lib/utils';
-import {constants} from 'http2';
 
 const {
   HTTP_STATUS_OK,

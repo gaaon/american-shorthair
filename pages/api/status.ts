@@ -1,5 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next-server/dist/lib/utils';
-import {constants} from 'http2';
+
+import { constants } from 'http2';
 
 const {
   HTTP2_HEADER_CONTENT_TYPE,

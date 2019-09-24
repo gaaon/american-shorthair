@@ -1,14 +1,15 @@
 import React from 'react';
+
 import App, { AppContext } from 'next/app';
 import Router from 'next/router';
 
 import * as gtag from '../lib/gtag';
-import {createData, initializeData, InjectStoreContext, RootStore} from '../store';
+import { createData, initializeData, InjectStoreContext, RootStore } from '../store';
 
 Router.events.on('routeChangeComplete', url => gtag.pageview(url));
 
 interface Props {
-  initialStoreData: RootStore,
+  initialStoreData: RootStore;
 }
 
 class MyApp extends App<Props> {
@@ -35,6 +36,7 @@ class MyApp extends App<Props> {
 }
 
 export default MyApp;
+
 // const appGetInitialProps = App.getInitialProps;
 //
 // App.getInitialProps = async (appContext) => {

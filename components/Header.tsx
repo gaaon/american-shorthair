@@ -1,13 +1,14 @@
-import React, {FunctionComponent} from 'react';
+import React, { FunctionComponent } from 'react';
 
 import Link from 'next/link';
 
 import Container from 'react-bootstrap/Container';
-import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+
+import { LinkItem } from '../types';
 
 import styles from './Header.scss';
-import {LinkItem} from '../types';
 
 interface Props {
 

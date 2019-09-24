@@ -1,12 +1,13 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+import { LinkItem } from '../../../types';
 
 import styles from '../RightMain.scss';
-import {LinkItem} from '../../../types';
 
 interface ContentProps {
   internalLinks: Array<LinkItem>;
@@ -60,7 +61,7 @@ const Content: React.FC<ContentProps> = ({internalLinks, onClickLink}) => {
         </Col>
       </Row>
     </Col>
-  )
+  );
 };
 
 export default Content;

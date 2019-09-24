@@ -1,16 +1,16 @@
-import {action, observable} from 'mobx';
+import { action, observable } from 'mobx';
 
-import {NextPageContext} from 'next';
+import { NextPageContext } from 'next';
 
 import cookie from 'cookie';
 import Cookies from 'js-cookie';
 
 export interface Setting {
-  isHomeAnimActive: boolean
+  isHomeAnimActive: boolean;
 }
 
-export interface SettingStore extends Setting{
-  toggleAnimActive: () => void
+export interface SettingStore extends Setting {
+  toggleAnimActive: () => void;
 }
 
 export const hydrateSetting = (ctx: NextPageContext): Setting => {
@@ -26,7 +26,7 @@ export const hydrateSetting = (ctx: NextPageContext): Setting => {
 
   return {
     isHomeAnimActive: isHomeAnimActive === undefined || isHomeAnimActive === 'true',
-  }
+  };
 };
 
 export const createSettingStore = ({ isHomeAnimActive }: Setting): SettingStore => {

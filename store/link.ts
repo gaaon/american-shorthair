@@ -1,11 +1,12 @@
-import {LinkItem} from '../types';
-import {observable} from 'mobx';
+import { observable } from 'mobx';
 
+import { faLightbulb, faSmileWink } from '@fortawesome/free-regular-svg-icons';
 import { faFlask } from '@fortawesome/free-solid-svg-icons';
-import { faSmileWink, faLightbulb } from '@fortawesome/free-regular-svg-icons';
+
+import { LinkItem } from '../types';
 
 export interface LinkStore {
-  internalLinks: Array<LinkItem>
+  internalLinks: Array<LinkItem>;
 }
 
 export const createLinkStore = (): LinkStore => observable({

@@ -4,18 +4,19 @@ import { NextPage } from 'next';
 import Head from 'next/head';
 import Router from 'next/router';
 
-import {useLocalStore, useObserver} from 'mobx-react';
+import { useLocalStore, useObserver } from 'mobx-react';
 
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 
 import Base from '../components/Base';
+import BackgroundMain from '../components/home/BackgroundMain';
 import LeftMain from '../components/home/LeftMain';
 import RightMain from '../components/home/RightMain';
-import BackgroundMain from '../components/home/BackgroundMain';
+
+import { RootStore, useStore } from '../store';
 
 import styles from './index.scss';
-import {RootStore, useStore} from '../store';
 
 const Home: NextPage = () => {
   const rootStore = useStore();

@@ -1,9 +1,12 @@
 import React from 'react';
-import {NextPage} from 'next';
-import Base from '../components/Base';
+
+import { NextPage } from 'next';
 import Head from 'next-server/dist/lib/head';
+
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
+
+import Base from '../components/Base';
 import UnderConstruction from '../components/UnderConstruction';
 
 const Service: NextPage = () => (

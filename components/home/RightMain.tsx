@@ -25,7 +25,7 @@ const RightMain: React.FC<Props> = ({className, onClickLink, onClickTriggerAnim,
         <Footer isAnimActive={isAnimActive} onClickTriggerAnim={onClickTriggerAnim} />
       </Row>
     </Col>
-  )
+  );
 };
 
 export default RightMain;

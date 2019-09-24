@@ -1,11 +1,12 @@
 import React, { FunctionComponent } from 'react';
 
+import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+
+import { Website } from '../types';
 
 import styles from './Footer.scss';
-import { Website } from '../types';
 
 interface Props {
 

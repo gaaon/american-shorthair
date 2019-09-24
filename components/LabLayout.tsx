@@ -1,12 +1,16 @@
-import React, {FunctionComponent} from 'react';
+import React, { FunctionComponent } from 'react';
+
 import Head from 'next-server/dist/lib/head';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Nav from 'react-bootstrap/Nav';
 import Link from 'next/link';
+
+import Col from 'react-bootstrap/Col';
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Row from 'react-bootstrap/Row';
+
 import Base from './Base';
-import {LinkItem} from '../types';
+
+import { LinkItem } from '../types';
 
 const LabLayout: FunctionComponent<{}> = ({children}) => {
   const linkItems: Array<LinkItem> = [
@@ -25,7 +29,7 @@ const LabLayout: FunctionComponent<{}> = ({children}) => {
             <h2 className={'text-center mt-5'}>리액트 실험실</h2>
           </Col>
         </Row>
-        <Nav className="justify-content-center" activeKey="/home">
+        <Nav className='justify-content-center' activeKey='/home'>
           {linkItems.map((linkItem, idx) => (
             <Nav.Item key={idx}>
               <Link href={linkItem.link} passHref={true}>

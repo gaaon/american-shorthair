@@ -1,16 +1,16 @@
-import React, { FunctionComponent } from 'react';
+import React from 'react';
 
 import Head from 'next/head';
 
+import Base from './Base';
 import Footer from './Footer';
 import Header from './Header';
-import Base from './Base';
 
 interface Props {
-  title: string
+  title: string;
 }
 
-const Layout: FunctionComponent<Props> = ({ children, title }) => {
+const Layout: React.FC<Props> = ({ children, title }) => {
 
   return (
     <Base>
@@ -26,7 +26,7 @@ const Layout: FunctionComponent<Props> = ({ children, title }) => {
 
       <Footer/>
     </Base>
-  )
+  );
 };
 
 export default Layout;

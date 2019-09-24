@@ -1,7 +1,10 @@
 import React from 'react';
-import Document, { Html, Head, Main, NextScript, DocumentContext } from 'next/document'
+
+import Document, { DocumentContext, Head, Html, Main, NextScript } from 'next/document';
+
+import { useStaticRendering } from 'mobx-react';
+
 import { GA_TRACKING_ID } from '../lib/gtag';
-import {useStaticRendering} from 'mobx-react';
 
 useStaticRendering(!process.browser);
 
@@ -15,12 +18,12 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <meta charSet="utf-8"/>
-          <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+          <meta charSet='utf-8'/>
+          <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'/>
 
-          <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css"/>
-          <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto&display=swap" />
-          <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/nanumgothic.css"/>
+          <link rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css'/>
+          <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Roboto&display=swap' />
+          <link rel='stylesheet' href='//fonts.googleapis.com/earlyaccess/nanumgothic.css'/>
 
           <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}/>
           <script
@@ -44,8 +47,8 @@ class MyDocument extends Document {
           <NextScript />
         </body>
       </Html>
-    )
+    );
   }
 }
 
-export default MyDocument
+export default MyDocument;
