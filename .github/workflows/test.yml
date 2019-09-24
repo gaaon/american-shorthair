@@ -9,6 +9,7 @@ on:
       - pages/*
       - package.json
       - next.config.js
+      - .github/*
 
 jobs:
   test:
@@ -29,7 +30,7 @@ jobs:
       - name: Install npm and test
         run: |
           npm install
-          npm tslint
+          npm run tslint
           npm test
         env:
           CI: true
