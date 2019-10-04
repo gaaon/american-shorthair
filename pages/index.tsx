@@ -51,7 +51,7 @@ const Home: NextPage = () => {
   return useObserver(() => (
     <Base>
       <Head>
-        <title>{'taawoo - home'}</title>
+        <title>{'taawoo - 홈'}</title>
       </Head>
 
       <Container className={styles.main}>

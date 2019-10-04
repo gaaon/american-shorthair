@@ -42,7 +42,7 @@ const Content: React.FC<ContentProps> = ({internalLinks, onClickLink}) => {
             {
               internalLinks.map((linkItem, idx) => (
                 <li key={idx} className={'mt-4'}>
-                    <p className={'h3'}>
+                    <p className={'h4'}>
                       <a href={linkItem.link} onClick={onClickLink} className={styles.menuItem}>
 
                         <span className={'d-inline-block text-center'} style={{minWidth: 50}}>

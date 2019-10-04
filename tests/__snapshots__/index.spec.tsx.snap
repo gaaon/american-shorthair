@@ -102,7 +102,7 @@ exports[`renders correctly 1`] = `
                     className="mt-4"
                   >
                     <p
-                      className="h3"
+                      className="h4"
                     >
                       <a
                         className="menuItem"
@@ -133,7 +133,7 @@ exports[`renders correctly 1`] = `
                     className="mt-4"
                   >
                     <p
-                      className="h3"
+                      className="h4"
                     >
                       <a
                         className="menuItem"
@@ -164,7 +164,7 @@ exports[`renders correctly 1`] = `
                     className="mt-4"
                   >
                     <p
-                      className="h3"
+                      className="h4"
                     >
                       <a
                         className="menuItem"

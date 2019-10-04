@@ -5,7 +5,9 @@
 }
 
 .left {
-  border: 3px solid $color-orange;
+  border-right: 1px solid black;
+  border-left: 1px solid black;
+
   transition: transform 1s ease-in-out;
 
   background-image: url(/static/img/door_pattern.jpg);
@@ -16,7 +18,9 @@
 }
 
 .right {
-  border: 3px solid $color-banana;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+
   transition: transform 1s ease-in-out;
 
   background-image: url(/static/img/door_pattern.jpg);
