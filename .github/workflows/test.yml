@@ -5,11 +5,11 @@ on:
     branches:
       - master
     paths:
-      - components/*
-      - pages/*
+      - components/**
+      - pages/**
       - package.json
       - next.config.js
-      - .github/*
+      - .github/**
 
 jobs:
   test:
